@@ -29,10 +29,8 @@ https://qiita.com/Nabetani/items/cbc3af152ee3f50a822f
 ```
 $ git clone git@github.com:ucan-lab/poker.git
 $ cd poker
-$ docker-compose build
-$ docker-compose up -d
-$ docker-compose exec app composer install
-$ docker-compose exec app php poker.php
+$ docker-compose run --rm composer install
+$ docker-compose run --rm app php poker.php
 DASAD10CAHA: 4K
 S10HJDJCJSJ: 4K
 S10HAD10DAC10: FH
