@@ -44,3 +44,9 @@ C3D3S10SKS2: 1P
 S3SJDAC10SQ: --
 C3C9SAS10D2: --
 ```
+
+## コード整備
+
+```
+$ docker-compose run --rm php-cs-fixer --dry-run -v --diff --diff-format udiff /app
+```

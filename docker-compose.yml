@@ -10,3 +10,8 @@ services:
     volumes:
       - .:/app
     working_dir: /app
+
+  php-cs-fixer:
+    image: oskarstark/php-cs-fixer-ga
+    volumes:
+      - .:/app

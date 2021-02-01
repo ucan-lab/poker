@@ -1,33 +1,30 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Poker;
 
-use Poker\Hands\Hands;
-use Poker\Card\HandCard;
-use Poker\Card\Card;
-use Poker\Card\Suit;
-use Poker\Card\Rank;
 use Exception;
+use Poker\Card\Card;
+use Poker\Card\HandCard;
+use Poker\Card\Rank;
+use Poker\Card\Suit;
+use Poker\Hands\Hands;
 
 /**
  * Class Poker
- * @package Poker
  */
 final class Poker
 {
     /**
      * @var array|HandCard
      */
-    protected $handCard = [];
+    private $handCard = [];
 
     /**
      * Poker constructor.
      * @param string $input
      * @throws Exception
      */
-    public function __construct (string $input)
+    public function __construct(string $input)
     {
         $this->handCard = $this->parseCardList($input);
         $this->hands = new Hands($this->handCard);
@@ -36,7 +33,7 @@ final class Poker
     /**
      * @return string
      */
-    public function result (): string
+    public function result(): string
     {
         return $this->hands->judge();
     }
@@ -46,7 +43,7 @@ final class Poker
      * @return HandCard
      * @throws Exception
      */
-    private function parseCardList (string $input): HandCard
+    private function parseCardList(string $input): HandCard
     {
         $input = str_replace(['D', 'C', 'S', 'H'], [' D', ' C', ' S', ' H'], $input);
         $inputList = explode(' ', trim($input));
@@ -56,6 +53,7 @@ final class Poker
         }
 
         $cardList = [];
+
         foreach ($inputList as $inputCard) {
             $cardList[] = $this->parseCard($inputCard);
         }
@@ -68,7 +66,7 @@ final class Poker
      * @return Card
      * @throws Exception
      */
-    private function parseCard (string $inputCard): Card
+    private function parseCard(string $inputCard): Card
     {
         $inputSuit = substr($inputCard, 0, 1);
         $inputRank = substr($inputCard, 1);

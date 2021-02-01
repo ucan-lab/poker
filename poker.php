@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once "vendor/autoload.php";
+require_once 'vendor/autoload.php';
 
 use Poker\Poker;
 
@@ -23,7 +23,7 @@ $test = [
 ];
 
 foreach ($test as $key => $value) {
-    echo "$key: $value" . PHP_EOL;
+    echo "${key}: ${value}" . PHP_EOL;
     $poker = new Poker($key);
     $answer = $poker->result();
     assert($answer === $value);
