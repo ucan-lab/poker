@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Poker\Hands;
 
@@ -8,7 +6,6 @@ use Poker\Card\HandCard;
 
 /**
  * Class Hands
- * @package Poker\Hands
  */
 final class Hands
 {
@@ -103,6 +100,7 @@ final class Hands
     private function isTwoPair(): bool
     {
         $existsOnePair = false;
+
         foreach ($this->handCard->getRankCount() as $count) {
             if ($count === 2) {
                 if ($existsOnePair) {

@@ -1,22 +1,19 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Poker\Card;
 
-use IteratorAggregate;
 use ArrayIterator;
+use IteratorAggregate;
 
 /**
  * Class HandCard
- * @package Poker\Card
  */
 final class HandCard implements IteratorAggregate
 {
     /**
      * @var array
      */
-    protected $attributes = [];
+    private $attributes = [];
 
     /**
      * @var array
@@ -32,7 +29,7 @@ final class HandCard implements IteratorAggregate
      * HandCard constructor.
      * @param $attributes
      */
-    function __construct($attributes)
+    public function __construct($attributes)
     {
         $this->attributes = $attributes;
 
@@ -63,9 +60,6 @@ final class HandCard implements IteratorAggregate
         return $this->rankCount;
     }
 
-    /**
-     * @return void
-     */
     private function calcCount(): void
     {
         $suits = [];

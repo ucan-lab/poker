@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Poker\Card;
 
@@ -8,7 +6,6 @@ use Exception;
 
 /**
  * Class Rank
- * @package Poker\Card
  */
 final class Rank
 {
@@ -40,7 +37,7 @@ final class Rank
      */
     public function __construct(string $name)
     {
-        if (!in_array ($name, self::RANKS, true)) {
+        if (!in_array($name, self::RANKS, true)) {
             throw new Exception('Rank not exists.');
         }
 

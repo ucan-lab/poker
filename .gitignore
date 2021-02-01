@@ -1,5 +1,6 @@
 /vendor
 /.idea
 /.vscode/*
+/.php_cs.cache
 !.vscode/extensions.json
 !.vscode/settings.json

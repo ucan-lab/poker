@@ -1,12 +1,9 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Poker\Card;
 
 /**
  * Class Card
- * @package Poker\Card
  */
 final class Card
 {
@@ -34,7 +31,7 @@ final class Card
     /**
      * @return string
      */
-    public function show (): string
+    public function show(): string
     {
         return $this->suit->getName() . $this->rank->getName();
     }
